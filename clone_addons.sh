@@ -30,3 +30,4 @@ ${PREFIX}Flightphase/ofxFTGL.git
 
 ${PREFIX}YCAMInterlab/ofxTimeline.git
 
+${PREFIX}hiroyuki/ofxArtnet.git

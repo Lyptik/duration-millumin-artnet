@@ -41,6 +41,8 @@
 #include "ofxLocalization.h"
 #include "ofxFTGLFont.h"
 #include "ofxTLAudioTrack.h"
+#include "ofxArtnet.h"
+#include "ofxXmlSettings.h"
 
 typedef struct {
     string path; //full project path
@@ -74,6 +76,7 @@ class DurationController : public ofThread  {
 	~DurationController();
 
 	void setup();
+    void setupDmx();
 
 	void enableInterface();
 	void disableInterface();
@@ -131,9 +134,22 @@ class DurationController : public ofThread  {
 
 	void startRecording();
 	void stopRecording();
+    
+    
+    // Artnet sender o2d, should be moved to protected as well
+    ofxArtnet o2d_artnet;
+    ofColor o2d_colorArtnet;
+    float o2d_intensityArtnet;
+    
+    map<string, int> o2d_vars;
+    ofxXmlSettings o2d_dmxmap;
+    
+    float o2d_timepercent;
+
+    //o2d : moved to public from protected (to be moved back in the future)
+    ofxTimeline timeline;
 
   protected:
-	ofxTimeline timeline;
     void bangFired(ofxTLBangEventArgs& bang);
 	vector<string> trackAddresses;
 
@@ -153,6 +169,7 @@ class DurationController : public ofThread  {
 	void threadedFunction();
 	void handleOscOut();
 	void handleOscIn();
+    void handleDmxOut();
 	bool enabled;
 
 	unsigned long recordTimeOffset;

@@ -44,8 +44,11 @@ void ofApp::setup(){
     ofEnableAlphaBlending();
     ofEnableSmoothing();
 	ofSetEscapeQuitsApp(false);
+    
 
+    ofSetFrameRate(40);
 	controller.setup();
+    
 	#ifdef TARGET_OSX
 	RemoveCocoaMenusFromGlut("Duration");
 	#endif
@@ -54,6 +57,11 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 
+}
+
+//--------------------------------------------------------------
+void ofApp::exit(){
+    
 }
 
 //--------------------------------------------------------------

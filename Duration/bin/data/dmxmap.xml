@@ -1,0 +1,14 @@
+<addresses>
+    <computer>1.1.1.1</computer>
+    <dmx>10.7.134.102</dmx>
+</addresses>
+<channels>
+    <!-- Add a variable value for a channel -->
+    <channel var="true">colorR</channel>
+    <channel var="true">colorG</channel>
+    <channel var="true">colorB</channel>
+    <!-- Add a static value for a channel
+    <channel var="false">0</channel>
+    -->
+</channels>
+        

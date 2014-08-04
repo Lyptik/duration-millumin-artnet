@@ -9,3 +9,4 @@ ofxTimeline
 ofxTween
 ofxUI
 ofxXmlSettings
+ofxArtnet

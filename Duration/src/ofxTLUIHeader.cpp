@@ -60,6 +60,7 @@ ofxTLUIHeader::ofxTLUIHeader(){
 	maxDialer = NULL;
     sendOSCEnable = NULL;
 	receiveOSCEnable = NULL;
+    recieveMilluminOSC = NULL;
 	modified = false;
 }
 

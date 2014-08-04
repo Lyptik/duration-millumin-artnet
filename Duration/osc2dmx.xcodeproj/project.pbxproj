@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30768F3193CA1A50073308E /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A30768F1193CA1A50073308E /* ofApp.cpp */; };
+		A32850A8193CC0DF0096F9D2 /* artnet.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285091193CC0DF0096F9D2 /* artnet.c */; };
+		A32850A9193CC0DF0096F9D2 /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285092193CC0DF0096F9D2 /* misc.c */; };
+		A32850AA193CC0DF0096F9D2 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285093193CC0DF0096F9D2 /* network.c */; };
+		A32850AB193CC0DF0096F9D2 /* receive.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285094193CC0DF0096F9D2 /* receive.c */; };
+		A32850AC193CC0DF0096F9D2 /* tod.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285095193CC0DF0096F9D2 /* tod.c */; };
+		A32850AD193CC0DF0096F9D2 /* transmit.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285096193CC0DF0096F9D2 /* transmit.c */; };
+		A32850AF193CC0DF0096F9D2 /* ofxArtnet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3285099193CC0DF0096F9D2 /* ofxArtnet.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -19,7 +27,6 @@
 		E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9790E8CC7DD009D7055 /* OpenGL.framework */; };
 		E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
-		E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */; };
 		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
@@ -75,7 +82,7 @@
 		E7D3318615D379E30009192F /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = E7D3316A15D379E20009192F /* kiss_fft.c */; };
 		E7D3318715D379E30009192F /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = E7D3316B15D379E20009192F /* kiss_fftr.c */; };
 		E7D3318C15D379E40009192F /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D3317A15D379E20009192F /* libsndfile.a */; };
-		E7DFADD015D0E24200CD5CF1 /* Duration.icns in Resources */ = {isa = PBXBuildFile; fileRef = E7DFADCE15D0E12500CD5CF1 /* Duration.icns */; };
+		E7DFADD015D0E24200CD5CF1 /* osc2dmx.icns in Resources */ = {isa = PBXBuildFile; fileRef = E7DFADCE15D0E12500CD5CF1 /* osc2dmx.icns */; };
 		E7DFADF015D0E28900CD5CF1 /* ofxTimecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7DFADE215D0E28900CD5CF1 /* ofxTimecode.cpp */; };
 		E7DFB07815D0E2A500CD5CF1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7DFB07115D0E2A500CD5CF1 /* tinyxml.cpp */; };
 		E7DFB07915D0E2A500CD5CF1 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7DFB07315D0E2A500CD5CF1 /* tinyxmlerror.cpp */; };
@@ -129,6 +136,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A30768F1193CA1A50073308E /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
+		A30768F2193CA1A50073308E /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
+		A3285089193CC0DF0096F9D2 /* artnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = artnet.h; sourceTree = "<group>"; };
+		A328508A193CC0DF0096F9D2 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		A328508B193CC0DF0096F9D2 /* misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
+		A328508C193CC0DF0096F9D2 /* packets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packets.h; sourceTree = "<group>"; };
+		A328508D193CC0DF0096F9D2 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
+		A328508E193CC0DF0096F9D2 /* tod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tod.h; sourceTree = "<group>"; };
+		A328508F193CC0DF0096F9D2 /* unistd_d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unistd_d.h; sourceTree = "<group>"; };
+		A3285091193CC0DF0096F9D2 /* artnet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = artnet.c; sourceTree = "<group>"; };
+		A3285092193CC0DF0096F9D2 /* misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = misc.c; sourceTree = "<group>"; };
+		A3285093193CC0DF0096F9D2 /* network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = network.c; sourceTree = "<group>"; };
+		A3285094193CC0DF0096F9D2 /* receive.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = receive.c; sourceTree = "<group>"; };
+		A3285095193CC0DF0096F9D2 /* tod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tod.c; sourceTree = "<group>"; };
+		A3285096193CC0DF0096F9D2 /* transmit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = transmit.c; sourceTree = "<group>"; };
+		A3285099193CC0DF0096F9D2 /* ofxArtnet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxArtnet.cpp; sourceTree = "<group>"; };
+		A328509A193CC0DF0096F9D2 /* ofxArtnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxArtnet.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -140,10 +164,8 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* DurationDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DurationDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* osc2dmxDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osc2dmxDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -280,7 +302,7 @@
 		E7D3317115D379E20009192F /* sndfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndfile.h; sourceTree = "<group>"; };
 		E7D3317215D379E20009192F /* sndfile.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sndfile.hh; sourceTree = "<group>"; };
 		E7D3317A15D379E20009192F /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
-		E7DFADCE15D0E12500CD5CF1 /* Duration.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Duration.icns; sourceTree = "<group>"; };
+		E7DFADCE15D0E12500CD5CF1 /* osc2dmx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = osc2dmx.icns; sourceTree = "<group>"; };
 		E7DFADE215D0E28900CD5CF1 /* ofxTimecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTimecode.cpp; sourceTree = "<group>"; };
 		E7DFADE315D0E28900CD5CF1 /* ofxTimecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTimecode.h; sourceTree = "<group>"; };
 		E7DFAF2715D0E29700CD5CF1 /* ofxUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUI.h; sourceTree = "<group>"; };
@@ -392,9 +414,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3285070193CC0DF0096F9D2 /* ofxArtnet */ = {
+			isa = PBXGroup;
+			children = (
+				A3285085193CC0DF0096F9D2 /* libs */,
+				A3285098193CC0DF0096F9D2 /* src */,
+			);
+			name = ofxArtnet;
+			path = ../../../addons/ofxArtnet;
+			sourceTree = "<group>";
+		};
+		A3285085193CC0DF0096F9D2 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A3285087193CC0DF0096F9D2 /* artnet */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		A3285087193CC0DF0096F9D2 /* artnet */ = {
+			isa = PBXGroup;
+			children = (
+				A3285088193CC0DF0096F9D2 /* include */,
+				A3285090193CC0DF0096F9D2 /* src */,
+			);
+			path = artnet;
+			sourceTree = "<group>";
+		};
+		A3285088193CC0DF0096F9D2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A3285089193CC0DF0096F9D2 /* artnet.h */,
+				A328508A193CC0DF0096F9D2 /* common.h */,
+				A328508B193CC0DF0096F9D2 /* misc.h */,
+				A328508C193CC0DF0096F9D2 /* packets.h */,
+				A328508D193CC0DF0096F9D2 /* private.h */,
+				A328508E193CC0DF0096F9D2 /* tod.h */,
+				A328508F193CC0DF0096F9D2 /* unistd_d.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A3285090193CC0DF0096F9D2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A3285091193CC0DF0096F9D2 /* artnet.c */,
+				A3285092193CC0DF0096F9D2 /* misc.c */,
+				A3285093193CC0DF0096F9D2 /* network.c */,
+				A3285094193CC0DF0096F9D2 /* receive.c */,
+				A3285095193CC0DF0096F9D2 /* tod.c */,
+				A3285096193CC0DF0096F9D2 /* transmit.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A3285098193CC0DF0096F9D2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A3285099193CC0DF0096F9D2 /* ofxArtnet.cpp */,
+				A328509A193CC0DF0096F9D2 /* ofxArtnet.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A3285070193CC0DF0096F9D2 /* ofxArtnet */,
 				E7C659BB15FF46BC0049005B /* ofxLocalization */,
 				E7C6596315FF22260049005B /* ofxFTGL */,
 				E78C29FB15EF1ADA003A9CCB /* ofxRange */,
@@ -462,14 +548,14 @@
 			isa = PBXGroup;
 			children = (
 				E750217616BDDAE2009FBF44 /* Credits.html */,
-				E7DFADCE15D0E12500CD5CF1 /* Duration.icns */,
+				E7DFADCE15D0E12500CD5CF1 /* osc2dmx.icns */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
-				E4B69B5B0A3A1756003C02F2 /* DurationDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* osc2dmxDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -477,8 +563,8 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
-				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
+				A30768F1193CA1A50073308E /* ofApp.cpp */,
+				A30768F2193CA1A50073308E /* ofApp.h */,
 				E775F6AD15D78959006E2E59 /* ofxTLUIHeader.h */,
 				E775F6AE15D7898A006E2E59 /* ofxTLUIHeader.cpp */,
 				E750F89B15EF313500B87EA2 /* DurationController.h */,
@@ -1098,9 +1184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* Duration */ = {
+		E4B69B5A0A3A1756003C02F2 /* osc2dmx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "Duration" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "osc2dmx" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -1113,9 +1199,9 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = Duration;
+			name = osc2dmx;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* DurationDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* osc2dmxDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1123,7 +1209,9 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "Duration" */;
+			attributes = {
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "osc2dmx" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1144,7 +1232,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* Duration */,
+				E4B69B5A0A3A1756003C02F2 /* osc2dmx */,
 			);
 		};
 /* End PBXProject section */
@@ -1164,7 +1252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7DFADD015D0E24200CD5CF1 /* Duration.icns in Resources */,
+				E7DFADD015D0E24200CD5CF1 /* osc2dmx.icns in Resources */,
 				E750217716BDDAE2009FBF44 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1193,12 +1281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
+				A32850A9193CC0DF0096F9D2 /* misc.c in Sources */,
 				E7DFADF015D0E28900CD5CF1 /* ofxTimecode.cpp in Sources */,
+				A32850AC193CC0DF0096F9D2 /* tod.c in Sources */,
 				E7DFB07815D0E2A500CD5CF1 /* tinyxml.cpp in Sources */,
 				E7DFB07915D0E2A500CD5CF1 /* tinyxmlerror.cpp in Sources */,
 				E7DFB07A15D0E2A500CD5CF1 /* tinyxmlparser.cpp in Sources */,
 				E7DFB07B15D0E2A500CD5CF1 /* ofxXmlSettings.cpp in Sources */,
+				A30768F3193CA1A50073308E /* ofApp.cpp in Sources */,
 				E7DFB3E415D0E2B700CD5CF1 /* ofxMSATimer.cpp in Sources */,
 				E7DFB40915D0E36800CD5CF1 /* ofxTextInputField.cpp in Sources */,
 				E7DFB45415D0E37E00CD5CF1 /* ofxEasing.cpp in Sources */,
@@ -1206,10 +1296,13 @@
 				E7DFB45615D0E37E00CD5CF1 /* ofxEasingBounce.cpp in Sources */,
 				E7DFB45715D0E37E00CD5CF1 /* ofxEasingCirc.cpp in Sources */,
 				E7DFB45815D0E37E00CD5CF1 /* ofxEasingCubic.cpp in Sources */,
+				A32850AD193CC0DF0096F9D2 /* transmit.c in Sources */,
 				E7DFB45915D0E37E00CD5CF1 /* ofxEasingElastic.cpp in Sources */,
 				E7DFB45A15D0E37E00CD5CF1 /* ofxEasingExpo.cpp in Sources */,
 				E7DFB45B15D0E37E00CD5CF1 /* ofxEasingLinear.cpp in Sources */,
+				A32850AF193CC0DF0096F9D2 /* ofxArtnet.cpp in Sources */,
 				E7DFB45C15D0E37E00CD5CF1 /* ofxEasingQuad.cpp in Sources */,
+				A32850AB193CC0DF0096F9D2 /* receive.c in Sources */,
 				E7DFB45D15D0E37E00CD5CF1 /* ofxEasingQuart.cpp in Sources */,
 				E7DFB45E15D0E37E00CD5CF1 /* ofxEasingQuint.cpp in Sources */,
 				E7DFB45F15D0E37E00CD5CF1 /* ofxEasingSine.cpp in Sources */,
@@ -1225,6 +1318,7 @@
 				E72B8DDB15D629CB00DB5A38 /* OscPrintReceivedElements.cpp in Sources */,
 				E72B8DDC15D629CB00DB5A38 /* OscReceivedElements.cpp in Sources */,
 				E72B8DDD15D629CB00DB5A38 /* OscTypes.cpp in Sources */,
+				A32850AA193CC0DF0096F9D2 /* network.c in Sources */,
 				E72B8DDE15D629CB00DB5A38 /* ofxOscBundle.cpp in Sources */,
 				E72B8DDF15D629CB00DB5A38 /* ofxOscMessage.cpp in Sources */,
 				E72B8DE015D629CB00DB5A38 /* ofxOscReceiver.cpp in Sources */,
@@ -1239,6 +1333,7 @@
 				E78C29ED15EF1AB3003A9CCB /* ofxTLImageSequence.cpp in Sources */,
 				E78C29EE15EF1AB3003A9CCB /* ofxTLImageSequenceFrame.cpp in Sources */,
 				E78C29EF15EF1AB3003A9CCB /* ofxTLImageTrack.cpp in Sources */,
+				A32850A8193CC0DF0096F9D2 /* artnet.c in Sources */,
 				E78C29F015EF1AB3003A9CCB /* ofxTLInOut.cpp in Sources */,
 				E78C29F115EF1AB3003A9CCB /* ofxTLKeyframes.cpp in Sources */,
 				E78C29F215EF1AB3003A9CCB /* ofxTLPage.cpp in Sources */,
@@ -1276,8 +1371,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -1285,7 +1379,7 @@
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"OFX_UI_FONT_RENDERER=ofxFTGLFont",
 					"OFX_UI_FONT_INCLUDE=<ofxFTGLFont.h>",
@@ -1298,6 +1392,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1 = "";
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_2 = "OFX_UI_FONT_NAME=\\\"GUI/mplus-1c-regular.ttf\\\"";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -1316,7 +1411,7 @@
 					../../../addons/ofxOsc/src,
 					../../../addons/ofxFTGL/libs/FTGL/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1331,8 +1426,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -1372,7 +1466,7 @@
 					../../../addons/ofxOsc/src,
 					../../../addons/ofxFTGL/libs/FTGL/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1386,6 +1480,8 @@
 		E4B69B600A3A1757003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1484,7 +1580,8 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxFTGL/libs/FTGL/lib/vs2010\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				PREBINDING = NO;
-				PRODUCT_NAME = DurationDebug;
+				PRODUCT_NAME = osc2dmxDebug;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1492,6 +1589,8 @@
 		E4B69B610A3A1757003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1589,7 +1688,8 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxFTGL/libs/FTGL/lib/vs2010\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				PREBINDING = NO;
-				PRODUCT_NAME = Duration;
+				PRODUCT_NAME = osc2dmx;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1597,7 +1697,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "Duration" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "osc2dmx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -1606,7 +1706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "Duration" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "osc2dmx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

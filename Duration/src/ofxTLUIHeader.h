@@ -104,6 +104,7 @@ class ofxTLUIHeader {
 	
     ofxUIToggle* sendOSCEnable;
 	ofxUIToggle* receiveOSCEnable;
+    ofxUIToggle* recieveMilluminOSC;
 	bool resizeEventsEnabled;
 	int audioNumberOfBins;
 	

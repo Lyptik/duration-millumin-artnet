@@ -171,7 +171,8 @@ void DurationController::setup(){
     trackTypes.push_back(translation.translateKey("switches"));
     trackTypes.push_back(translation.translateKey("curves"));
     trackTypes.push_back(translation.translateKey("colors"));
-	trackTypes.push_back(translation.translateKey("lfo"));
+    
+    trackTypes.push_back(translation.translateKey("lfo"));
 	trackTypes.push_back(translation.translateKey("audio"));
 
     addTrackDropDown = new ofxUIDropDownList(DROP_DOWN_WIDTH, translation.translateKey("ADD TRACK"), trackTypes, OFX_UI_FONT_MEDIUM);
@@ -259,10 +260,29 @@ void DurationController::setup(){
 //        cout << "Loading sample project " << defaultProjectDirectoryPath << endl;
         loadProject(ofToDataPath(defaultProjectDirectoryPath+"Sample Project"), "Sample Project", true);
     }
+    
+    setupDmx();
 
 	createTooltips();
-
 	startThread();
+}
+
+void DurationController::setupDmx()
+{
+    // Load the XML dmx map
+    if( o2d_dmxmap.loadFile("dmxmap.xml") ){
+        cout<< "XML File loaded" << endl;
+	}else{
+		cout<< "unable to load XML file" << endl;
+	}
+    
+    // o2d setup, should be moved to duration controller some day
+    o2d_artnet.setup(o2d_dmxmap.getValue("addresses:computer", "null").c_str()); //computer IP address
+    
+    // Declare the variables
+    o2d_vars.insert( pair<string, int>("colorR", 0) );
+    o2d_vars.insert( pair<string, int>("colorG", 0) );
+    o2d_vars.insert( pair<string, int>("colorB", 0) );
 }
 
 void DurationController::threadedFunction(){
@@ -271,6 +291,7 @@ void DurationController::threadedFunction(){
 		oscLock.lock();
 		handleOscIn();
 		handleOscOut();
+        handleDmxOut();
 		oscLock.unlock();
 		unlock();
 
@@ -392,21 +413,21 @@ void DurationController::handleOscIn(){
 				ofLogError("Duration:OSC") << " Set Duration failed - must have one argument. seconds as float, timecode string HH:MM:SS:MILS, or integer as milliseconds";
 			}
 		}
-		else if(m.getAddress() == "/duration/play"){
+        else if(m.getAddress() == "/duration/play"){
 			if(m.getNumArgs() == 0){
 				if(!timeline.getIsPlaying()){
 					shouldStartPlayback = true;
 				}
 			}
 			else {
-				for(int i = 0; i < m.getNumArgs(); i++){
-					if(m.getArgType(i) == OFXOSC_TYPE_STRING){
-						ofPtr<ofxTLUIHeader> header = getHeaderWithDisplayName(m.getArgAsString(i));
-						if(header != NULL){
+                for(int i = 0; i < m.getNumArgs(); i++){
+                    if(m.getArgType(i) == OFXOSC_TYPE_STRING){
+                        ofPtr<ofxTLUIHeader> header = getHeaderWithDisplayName(m.getArgAsString(i));
+                        if(header != NULL){
 							header->getTrack()->play();
-						}
-					}
-				}
+                        }
+                    }
+                }
 			}
 		}
 		else if(m.getAddress() == "/duration/stop"){
@@ -442,15 +463,16 @@ void DurationController::handleOscIn(){
 				ofLogError("Duration:OSC") << " Seek to Second failed: first argument must be a float";
 			}
 		}
-		else if(m.getAddress() == "/duration/seektoposition"){
-			if(m.getArgType(0) == OFXOSC_TYPE_FLOAT){
+        
+		else if(m.getAddress() == "/duration/seektoposition" ){
+            if(m.getArgType(0) == OFXOSC_TYPE_FLOAT){
 				float percent = ofClamp(m.getArgAsFloat(0),0.0,1.0);
 				timeline.setPercentComplete(percent);
 			}
 			else{
 				ofLogError("Duration:OSC") << " Seek to Position failed: first argument must be a float between 0.0 and 1.0";
 			}
-		}
+        }
 		else if(m.getAddress() == "/duration/seektomillis"){
 			if(m.getArgType(0) == OFXOSC_TYPE_INT32){
 				timeline.setCurrentTimeMillis(m.getArgAsInt32(0));
@@ -708,6 +730,24 @@ void DurationController::handleOscIn(){
 				ofLogError("Duration:OSC") << "Set audio clip failed, incorrectly formatted arguments. \n usage /duration/audioclip filepath:string ";
 			}
 		}
+        
+        // o2d changed condition to seek position
+        else if(m.getAddress() == "/millumin/layer/media/time/1"){
+			if(m.getNumArgs() == 1 && m.getArgType(0) == OFXOSC_TYPE_FLOAT && m.getArgAsFloat(0)<1){
+                o2d_timepercent = ofClamp(m.getArgAsFloat(0),0.0,1.0);
+			}
+			else{
+				ofLogError("Duration:OSC") << " Seek to Position failed: first argument must be a float between 0.0 and 1.0";
+			}
+        }
+        // o2d changed condition to play on cue 1
+		/*else if(m.getAddress() == "/millumin/composition/cue"){
+            if (m.getArgAsString(0) == "cue1") {
+                if(!timeline.getIsPlaying()){
+                    shouldStartPlayback = true;
+                }
+            }
+        }*/
 	}
 }
 
@@ -745,10 +785,11 @@ void DurationController::handleOscOut(){
 					ofxTLKeyframes* curves = (ofxTLKeyframes*)tracks[t];
 					float value = curves->getValueAtTimeInMillis(trackSampleTime);
 					if(value != header->lastFloatSent || !header->hasSentValue || refreshAllOscOut){
-						m.addFloatArg(value);
+						m.addFloatArg(255*value);
 						header->lastFloatSent = value;
 						header->hasSentValue = true;
 						messageValid = true;
+                        //o2d_intensityArtnet = value;
 					}
 				}
 				else if(trackType == "Switches"){
@@ -771,6 +812,7 @@ void DurationController::handleOscOut(){
 						header->lastColorSent = color;
 						header->hasSentValue = true;
 						messageValid = true;
+                        //o2d_colorArtnet = color;
 					}
 				}
 				else if(trackType == "Audio"){
@@ -806,7 +848,81 @@ void DurationController::handleOscOut(){
 	}
 	lastOSCBundleSent = bundleTime;
 	bangsReceived.clear();
+    
+
 }
+
+// o2d : handles dmx variables for output
+void DurationController::handleDmxOut()
+{
+    unsigned long timelineSampleTime = timeline.getCurrentTimeMillis();
+
+    vector<ofxTLPage*>& pages = timeline.getPages();
+    
+	for(int i = 0; i < pages.size(); i++){
+        
+		vector<ofxTLTrack*>& tracks = pages[i]->getTracks();
+        
+		for(int t = 0; t < tracks.size(); t++){
+            
+			unsigned long trackSampleTime = tracks[t]->getIsPlaying() ? tracks[t]->currentTrackTime() : timelineSampleTime;
+            
+			string trackType = tracks[t]->getTrackType();
+                
+            if(trackType == "Curves" || trackType == "LFO"){
+				ofxTLKeyframes* curves = (ofxTLKeyframes*)tracks[t];
+				float value = curves->getValueAtTimeInMillis(trackSampleTime);
+                o2d_intensityArtnet = value;
+			}
+            
+			else if(trackType == "Colors"){
+				ofxTLColorTrack* colors = (ofxTLColorTrack*)tracks[t];
+				ofColor color = colors->getColorAtMillis(trackSampleTime);
+                o2d_colorArtnet = color;
+			}
+        }
+    }
+    
+    //o2d update, should be moved to duration controller some day
+    timeline.setPercentComplete(o2d_timepercent);
+    
+    // Update the variables
+    o2d_vars["colorR"]=o2d_colorArtnet.r;
+    o2d_vars["colorG"]=o2d_colorArtnet.g;
+    o2d_vars["colorB"]=o2d_colorArtnet.b;
+    
+    float intensity=o2d_intensityArtnet;
+    o2d_vars["colorR"]*=intensity;
+    o2d_vars["colorG"]*=intensity;
+    o2d_vars["colorB"]*=intensity;
+    
+    unsigned char data[512] = {};
+    
+    o2d_dmxmap.pushTag("channels");
+    
+    for (int i=0; i<o2d_dmxmap.getNumTags("channel"); i++){
+        
+        // If the channel is mapped to a variable
+        if (o2d_dmxmap.getAttribute("channel", "var", "null", i) == "true"){
+            
+            data[i] = o2d_vars[ o2d_dmxmap.getValue("channel", "null", i) ];
+            
+        } else if (o2d_dmxmap.getAttribute("channel", "var", "null", i) == "false"){
+            
+            data[i] = o2d_dmxmap.getValue("channel", 0, i);
+            
+        } else {
+            
+            cout<<"error : can't find attribute"<<endl;
+            
+        }
+    }
+    
+    o2d_dmxmap.popTag();
+    
+    o2d_artnet.sendDmx(o2d_dmxmap.getValue("addresses:dmx", "null").c_str(), data, 512);
+}
+
 
 //TODO: hook up to record button
 //and make NO LOOP
@@ -1394,6 +1510,7 @@ void DurationController::newProject(string newProjectPath, string newProjectName
 void DurationController::loadProject(string projectPath, bool forceCreate){
 	//scrape off the last component of the filename for the project name
 	projectPath = ofFilePath::removeTrailingSlash(projectPath);
+    cout << projectPath << endl;
 #ifdef TARGET_WIN32
 	vector<string> pathComponents = ofSplitString(projectPath, "\\");
 #else
@@ -1406,6 +1523,7 @@ void DurationController::loadProject(string projectPath, bool forceCreate){
 void DurationController::loadProject(string projectPath, string projectName, bool forceCreate){
     ofxXmlSettings projectSettings;
 	string projectDataPath = ofToDataPath(projectPath+"/.durationproj");
+    cout << projectDataPath << endl;
 	if(!projectSettings.loadFile(projectDataPath)){
         if(forceCreate){
             newProject(projectPath, projectName);
@@ -1797,4 +1915,12 @@ void DurationController::exit(ofEventArgs& e){
 
 	ofLogNotice("DurationController") << "waiting for thread on exit";
 	waitForThread(true);
+    
+    // Shut down the dmx lights
+    unsigned char data[512] = {};
+    for (int i = 0 ; i<512 ; i++){
+        data[i] = 0;
+    }
+    o2d_artnet.sendDmx(o2d_dmxmap.getValue("addresses:dmx", "null").c_str(), data, 512);
+    cout << "Shutting down the lights" 	<< endl;
 }

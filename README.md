@@ -1,4 +1,4 @@
-# Duration Millumlin Artnet
+# Duration Millumin Artnet
 
 This project is a fork from [Duration](http://duration.cc) to be able to synchronize several lights with a video. The video is played by [Millumin](http://millumin.com/) and Duration acts as an Artnet creative tool. They are both synchronized in a slave/master fashion, Millumin being the master.
 

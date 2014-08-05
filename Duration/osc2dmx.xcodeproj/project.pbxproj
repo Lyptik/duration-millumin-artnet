@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63272DA01990C277009DDB8D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63272D9F1990C277009DDB8D /* CoreVideo.framework */; };
+		63272DA21990C285009DDB8D /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63272DA11990C285009DDB8D /* QTKit.framework */; };
 		A30768F3193CA1A50073308E /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A30768F1193CA1A50073308E /* ofApp.cpp */; };
 		A32850A8193CC0DF0096F9D2 /* artnet.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285091193CC0DF0096F9D2 /* artnet.c */; };
 		A32850A9193CC0DF0096F9D2 /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = A3285092193CC0DF0096F9D2 /* misc.c */; };
@@ -32,8 +34,6 @@
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E7213A1916BCCF640011637E /* ofOpenALSoundPlayer_TimelineAdditions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7213A1716BCCF640011637E /* ofOpenALSoundPlayer_TimelineAdditions.cpp */; };
-		E726AFB315D4CEB900C941A3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E726AFB215D4CEB900C941A3 /* CoreVideo.framework */; };
-		E726AFB515D4CEBF00C941A3 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E726AFB415D4CEBF00C941A3 /* QTKit.framework */; };
 		E72B8DD515D629CB00DB5A38 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E72B8DB015D629CB00DB5A38 /* IpEndpointName.cpp */; };
 		E72B8DD615D629CB00DB5A38 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E72B8DB515D629CB00DB5A38 /* NetworkingUtils.cpp */; };
 		E72B8DD715D629CB00DB5A38 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E72B8DB615D629CB00DB5A38 /* UdpSocket.cpp */; };
@@ -136,6 +136,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		63272D9F1990C277009DDB8D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		63272DA11990C285009DDB8D /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		A30768F1193CA1A50073308E /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		A30768F2193CA1A50073308E /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		A3285089193CC0DF0096F9D2 /* artnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = artnet.h; sourceTree = "<group>"; };
@@ -174,8 +176,6 @@
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		E7213A1716BCCF640011637E /* ofOpenALSoundPlayer_TimelineAdditions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofOpenALSoundPlayer_TimelineAdditions.cpp; sourceTree = "<group>"; };
 		E7213A1816BCCF640011637E /* ofOpenALSoundPlayer_TimelineAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofOpenALSoundPlayer_TimelineAdditions.h; sourceTree = "<group>"; };
-		E726AFB215D4CEB900C941A3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
-		E726AFB415D4CEBF00C941A3 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/QTKit.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
 		E72B8DB015D629CB00DB5A38 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
 		E72B8DB115D629CB00DB5A38 /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
 		E72B8DB215D629CB00DB5A38 /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
@@ -388,6 +388,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63272DA21990C285009DDB8D /* QTKit.framework in Frameworks */,
+				63272DA01990C277009DDB8D /* CoreVideo.framework in Frameworks */,
 				E750F98E15F4B80800B87EA2 /* OpenAL.framework in Frameworks */,
 				E78C2A0315EF1BC2003A9CCB /* Accelerate.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
@@ -403,8 +405,6 @@
 				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
-				E726AFB515D4CEBF00C941A3 /* QTKit.framework in Frameworks */,
-				E726AFB315D4CEB900C941A3 /* CoreVideo.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
 				E7D3318C15D379E40009192F /* libsndfile.a in Frameworks */,
 				E7C659AA15FF22260049005B /* libftgl.a in Frameworks */,
@@ -501,8 +501,8 @@
 			children = (
 				E750F98D15F4B80700B87EA2 /* OpenAL.framework */,
 				E78C2A0215EF1BC2003A9CCB /* Accelerate.framework */,
-				E726AFB415D4CEBF00C941A3 /* QTKit.framework */,
-				E726AFB215D4CEB900C941A3 /* CoreVideo.framework */,
+				63272DA11990C285009DDB8D /* QTKit.framework */,
+				63272D9F1990C277009DDB8D /* CoreVideo.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
 				E4C2424610CC5A17004149E2 /* IOKit.framework */,
@@ -1210,6 +1210,7 @@
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "osc2dmx" */;
 			compatibilityVersion = "Xcode 2.4";
@@ -1371,7 +1372,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -1411,14 +1412,15 @@
 					../../../addons/ofxOsc/src,
 					../../../addons/ofxFTGL/libs/FTGL/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 					"-mtune=native",
 				);
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -1426,7 +1428,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -1466,7 +1468,7 @@
 					../../../addons/ofxOsc/src,
 					../../../addons/ofxFTGL/libs/FTGL/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1474,6 +1476,7 @@
 					"-lpthread",
 					"-mtune=native",
 				);
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
@@ -1482,6 +1485,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1581,7 +1585,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = osc2dmxDebug;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1591,6 +1595,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1689,7 +1694,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = osc2dmx;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
